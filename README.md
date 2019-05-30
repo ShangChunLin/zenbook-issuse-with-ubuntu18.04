@@ -1,5 +1,4 @@
 # zenbook-issuse-with-ubuntu18.04
-# zenbook issues with ubuntu 18.04
 
 My solution on issues about asus zenbook Ux533 with ubuntu 18.04.
 
