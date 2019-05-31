@@ -142,7 +142,7 @@ then install cuda driver, see step3
 
 3. install cuda 
 
-deb file (withdriver) works for me, the following is by my friend's laptop 
+deb file (with driver) works for me, the following is by my personal 5 years cuda installation summary 
 
 download deb file and install should work, if not, 
 
