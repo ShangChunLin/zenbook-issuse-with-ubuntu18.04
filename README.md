@@ -14,7 +14,7 @@ Press e
 
 Find the line that starts with linux then add 
 
-modprobe.blacklist=nouveau
+    modprobe.blacklist=nouveau
 
 after quiet splash.
 
@@ -107,40 +107,54 @@ it sucks, as usual.
 
 1. if not boot after install 
 
-in grub, choose ubuntu ,presse 'e', add  modprobe.blacklist=nouveau  after splash , the line starts with linux then boot,
+in grub, choose ubuntu ,presse 'e', add  
+
+    modprobe.blacklist=nouveau  
+    
+after splash , the line starts with linux then boot,
 
 if bootable, then step 2
 
 2. blacklist nouveau
 
-sudo bash -c "echo blacklist nouveau > /etc/modprobe.d/blacklist-nvidia-nouveau.conf"
+        sudo bash -c "echo blacklist nouveau > /etc/modprobe.d/blacklist-nvidia-nouveau.conf"
 
-sudo bash -c "echo options nouveau modeset=0 >> /etc/modprobe.d/blacklist-nvidia-nouveau.conf"
+        sudo bash -c "echo options nouveau modeset=0 >> /etc/modprobe.d/blacklist-nvidia-nouveau.conf"
 
-cat /etc/modprobe.d/blacklist-nvidia-nouveau.conf
+        cat /etc/modprobe.d/blacklist-nvidia-nouveau.conf
 
 should see:
 
-blacklist nouveau
+    blacklist nouveau
 
-options nouveau modeset=0
+    options nouveau modeset=0
 
-then sudo update-initramfs -u
+then 
+
+    sudo update-initramfs -u
 
 then install cuda driver, see step3
 
 3. install cuda 
 
+
+
 download deb file and install should work, if not, 
 
-sudo apt-get purge --remove cuda*
+    sudo apt-get purge --remove cuda*
 
 then install cuda driver, 
 
-sudo add-apt-repository ppa:graphics-drivers/ppa
-sudo apt update
-sudo apt install nvidia-driver-xxx (418 for cuda 10, 410 for cuda 9, ...)
-sudo reboot
+    sudo add-apt-repository ppa:graphics-drivers/ppa
+    sudo apt update
+    sudo apt install nvidia-driver-xxx (418 for cuda 10, 410 for cuda 9, ...)
+    sudo reboot
+
+once reboot
+
+    nvidia-smi
+    
+see driver installed properly or not, if it does, then
 
 Then download cuda run file and install cuda without install driver,
 
@@ -148,9 +162,15 @@ If it is still not working, well, a clean install ubuntu may help.
 
 ## 4. Turn off screen 
 
-in terminal: xset dpms force off
+in terminal: 
 
-permanent: alias screenoff='xset dpms force off' to .bashrc
+    xset dpms force off
+
+permanent: add
+
+    alias screenoff='xset dpms force off' 
+    
+to .bashrc
 
 then in the futurn, just type 'screenoff' in the terminal 
 
@@ -159,13 +179,13 @@ resaon : 18.04 will use 802.11n but the router may use a/b/g
 
 Check if it works first with:
 
-sudo modprobe -r iwlwifi
+    sudo modprobe -r iwlwifi
 
-sudo modprobe iwlwifi 11n_disable=1
+    sudo modprobe iwlwifi 11n_disable=1
 
 Make it permanent with this command:
 
-echo "options iwlwifi 11n_disable=1" | sudo tee /etc/modprobe.d/iwlwifi.conf
+    echo "options iwlwifi 11n_disable=1" | sudo tee /etc/modprobe.d/iwlwifi.conf
 
 ### Declartion
 
