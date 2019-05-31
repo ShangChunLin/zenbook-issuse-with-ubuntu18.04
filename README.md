@@ -54,7 +54,11 @@ then install nvidia driver,
 
     sudo reboot
 
-see issue 2 if got purple screen after reboot (especially after update and upgrade)
+once bott
+    
+    nvidia-smi
+
+see you have driver or not, see issue 2 if got purple screen after reboot (especially after update and upgrade)
 
 ## 1.speaker no sound or keyboard backlight
 
