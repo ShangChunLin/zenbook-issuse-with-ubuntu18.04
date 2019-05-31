@@ -18,7 +18,7 @@ modprobe.blacklist=nouveau
 
 after quiet splash.
 
-Once the installation is done, remove the pendrive and reboot system
+Once the installation is done, remove the usb and reboot system
 
 Make sure security boot is disable
 
@@ -163,8 +163,11 @@ echo "options iwlwifi 11n_disable=1" | sudo tee /etc/modprobe.d/iwlwifi.conf
 
 It is just proplem I have with my zenbook, if it distroys your laptop, well, cest la vie
 
-If you have other problems , I may be able to help
+If you have other problems , I may be able to help (if the system is not fresh installed, 
+
+then the possibitties will be way to high)
 
 my mail: a36402191234@gmail.com
+
 
 
