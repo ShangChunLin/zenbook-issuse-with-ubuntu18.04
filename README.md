@@ -26,33 +26,33 @@ Boot, select Ubuntu at GRUB (repeat modprobe.blacklist=nouveau step if the scree
 
 Once boot successfully, blacklist nouveau permanently
 
-sudo bash -c "echo blacklist nouveau > /etc/modprobe.d/blacklist-nvidia-nouveau.conf"
+    sudo bash -c "echo blacklist nouveau > /etc/modprobe.d/blacklist-nvidia-nouveau.conf"
 
-sudo bash -c "echo options nouveau modeset=0 >> /etc/modprobe.d/blacklist-nvidia-nouveau.conf"
+    sudo bash -c "echo options nouveau modeset=0 >> /etc/modprobe.d/blacklist-nvidia-nouveau.conf"
 
-cat /etc/modprobe.d/blacklist-nvidia-nouveau.conf
+    cat /etc/modprobe.d/blacklist-nvidia-nouveau.conf
 
 should see:
 
-blacklist nouveau
+    blacklist nouveau
 
-options nouveau modeset=0
+    options nouveau modeset=0
 
 then 
 
-sudo update-initramfs -u
+    sudo update-initramfs -u
 
 to activate
 
 then install nvidia driver, 
 
-sudo add-apt-repository ppa:graphics-drivers/ppa
+    sudo add-apt-repository ppa:graphics-drivers/ppa
 
-sudo apt update
+    sudo apt update
 
-sudo apt install nvidia-driver-xxx (418 or 410 or...)
+    sudo apt install nvidia-driver-xxx (418 or 410 or...)
 
-sudo reboot
+    sudo reboot
 
 see issue 2 if got purple screen after reboot (especially after update and upgrade)
 
@@ -68,10 +68,10 @@ my way:
 
 install ukuu (https://www.omgubuntu.co.uk/2017/02/ukuu-easy-way-to-install-mainline-kernel-ubuntu)
 
-sudo add-apt-repository ppa:teejee2008/ppa
+    sudo add-apt-repository ppa:teejee2008/ppa
 
-sudo apt-get update && sudo apt-get install ukuu
-
+    sudo apt-get update && sudo apt-get install ukuu
+  
 then open ukuu in application (show application, the 3*3 dots icon left lower corner, or use window key, to search ukuu)
 
 then upgrade kernel to 4.20 or higher (4.19.x may work, but 4.19.0 does not,i guess somewhere beween 4.19.1 and 4.20) 
@@ -85,11 +85,19 @@ reason: intel update
 
 solution: 
 
-in grub, choose ubuntu, DONT PRESS ENETER ,presse 'e', add   dis_ucode_ldr  after the line start with linux , then boot (press F10)
+in grub, choose ubuntu, DONT PRESS ENETER ,presse 'e', add   
 
-once boot, in termial : sudo apt install intel-microcode=3.20180312.0~ubuntu18.04.1 
+    dis_ucode_ldr  
+    
+after the line start with linux , then boot (press F10)
 
-then hold package:  sudo apt-mark hold intel-microcode=3.20180312.0~ubuntu18.04.1
+once boot, in termial : 
+
+    sudo apt install intel-microcode=3.20180312.0~ubuntu18.04.1 
+
+then hold package:  
+
+    sudo apt-mark hold intel-microcode=3.20180312.0~ubuntu18.04.1
 
 should solve the problem
 
