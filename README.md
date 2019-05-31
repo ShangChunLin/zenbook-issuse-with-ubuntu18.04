@@ -142,14 +142,19 @@ then install cuda driver, see step3
 
 3. install cuda 
 
-
+deb file (withdriver) works for me, the following is by my friend's laptop 
 
 download deb file and install should work, if not, 
 
     sudo apt-get purge --remove cuda*
+    sudo apt-get install ubuntu-desktop
 
-then install cuda driver, 
+if the driver is loaded (after reboot), the install through cuda.run file without driver.
 
+if not, then install cuda driver, 
+
+    sudo apt-get purge --remove nvida*
+    sudo apt-get install ubuntu-desktop
     sudo add-apt-repository ppa:graphics-drivers/ppa
     sudo apt update
     sudo apt install nvidia-driver-xxx (418 for cuda 10, 410 for cuda 9, ...)
@@ -159,9 +164,9 @@ once reboot
 
     nvidia-smi
     
-see driver installed properly or not, if it does, then
+see driver installed properly or not, if it does, then 
 
-Then download cuda run file and install cuda without install driver,
+Then download cuda.run file and install cuda without install driver,
 
 If it is still not working, well, a clean install ubuntu may help.
 
