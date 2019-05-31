@@ -2,11 +2,12 @@
 
 My solution on issues about asus zenbook Ux533 with ubuntu 18.04.
 
-Ux533 is a good laptop but I guess it is too new for ubuntu 18.04
+Ux533 is a good laptop, but I guess it is too new for ubuntu 18.04
 
 ## 0. Install ubuntu 
-Frequcent crush while install ubuntu
-I guess it is the problem about graphic card
+Frequcent crush while installing ubuntu.
+
+It is the problem about the graphic card.
 
 Choose install Ubuntu option (BUT DONT PRESS ENTER)
 
@@ -54,7 +55,7 @@ then install nvidia driver,
 
     sudo reboot
 
-once bott
+once boot
     
     nvidia-smi
 
