@@ -81,9 +81,9 @@ then open ukuu in application (show application, the 3*3 dots icon left lower co
 then upgrade kernel to 4.20 or higher (4.19.x may work, but 4.19.0 does not,i guess somewhere beween 4.19.1 and 4.20) 
 
 
-## 2. boot stuck in purple screen after update
+## 2. boot stuck in purple screen after update or loading initial ramdisk in recovery mode
 
-after update then boot stuck in purple screen
+after update then boot stuck in purple screen and stuck in loading initial ramdisk with recovery mode
 
 reason: intel update
 
