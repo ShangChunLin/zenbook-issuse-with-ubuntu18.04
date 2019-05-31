@@ -20,7 +20,7 @@ after quiet splash.
 
 Once the installation is done, remove the usb and reboot system
 
-Make sure security boot is disable
+Make sure security boot is disable (in BIOS)
 
 Boot, select Ubuntu at GRUB (repeat modprobe.blacklist=nouveau step if the screen freezes again).
 
