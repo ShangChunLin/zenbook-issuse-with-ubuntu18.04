@@ -1,11 +1,11 @@
-# zenbook-issuse-with-ubuntu18.04
+# zenbook-issues-with-ubuntu18.04
 
 My solution on issues about asus zenbook Ux533 with ubuntu 18.04.
 
 Ux533 is a good laptop, but I guess it is too new for ubuntu 18.04
 
 ## 0. Install ubuntu 
-Frequcent crush while installing ubuntu.
+Frequent crash while installing ubuntu.
 
 It is the problem about the graphic card.
 
@@ -21,11 +21,11 @@ after quiet splash.
 
 Once the installation is done, remove the usb and reboot system
 
-Make sure security boot is disable (in BIOS)
+Make sure security boot is disabled (in BIOS)
 
 Boot, select Ubuntu at GRUB (repeat modprobe.blacklist=nouveau step if the screen freezes again).
 
-Once boot successfully, blacklist nouveau permanently
+Once booted successfully, blacklist nouveau permanently
 
     sudo bash -c "echo blacklist nouveau > /etc/modprobe.d/blacklist-nvidia-nouveau.conf"
 
@@ -33,7 +33,7 @@ Once boot successfully, blacklist nouveau permanently
 
     cat /etc/modprobe.d/blacklist-nvidia-nouveau.conf
 
-should see:
+You should see:
 
     blacklist nouveau
 
@@ -55,15 +55,15 @@ then install nvidia driver,
 
     sudo reboot
 
-once boot
+once booted
     
     nvidia-smi
 
-see you have driver or not, see issue 2 if got purple screen after reboot (especially after update and upgrade)
+to see if you have driver or not, see issue 2 if got purple screen after reboot (especially after update and upgrade)
 
 ## 1.speaker no sound or keyboard backlight
 
-If no sound from speaker/keyboard backlight notworking but works fine under windows :
+If no sound from speaker/keyboard backlight notworking but works fine under windows:
 
 reason: kernel 4.15 does not support hardware
 
@@ -90,13 +90,13 @@ reason: intel update
 
 solution: 
 
-in grub, choose ubuntu, DONT PRESS ENETER ,presse 'e', add   
+in grub, select ubuntu, DO NOT PRESS ENTER ,presse 'e', add   
 
     dis_ucode_ldr  
     
-after the line start with linux , then boot (press F10)
+after the line that starts with linux, then boot (press F10)
 
-once boot, in termial : 
+once booted, in terminal: 
 
     sudo apt install intel-microcode=3.20180312.0~ubuntu18.04.1 
 
@@ -112,11 +112,11 @@ it sucks, as usual.
 
 1. if not boot after install 
 
-in grub, choose ubuntu ,presse 'e', add  
+in grub, select ubuntu, DO NOT PRESS ENTER ,presse 'e', add   
 
     modprobe.blacklist=nouveau  
     
-after splash , the line starts with linux then boot,
+to the end of the line that starts with linux (after splash), then boot,
 
 if bootable, then step 2
 
@@ -128,7 +128,7 @@ if bootable, then step 2
 
         cat /etc/modprobe.d/blacklist-nvidia-nouveau.conf
 
-should see:
+You should see:
 
     blacklist nouveau
 
@@ -138,7 +138,7 @@ then
 
     sudo update-initramfs -u
 
-then install cuda driver, see step3
+then install cuda driver, see step 3
 
 3. install cuda 
 
@@ -149,7 +149,7 @@ download deb file and install should work, if not,
     sudo apt-get purge --remove cuda*
     sudo apt-get install ubuntu-desktop
 
-if the driver is loaded (after reboot), the install through cuda.run file without driver.
+if the driver is loaded (after reboot), then install through cuda.run file without driver.
 
 if not, then install cuda driver, 
 
@@ -160,11 +160,11 @@ if not, then install cuda driver,
     sudo apt install nvidia-driver-xxx (418 for cuda 10, 410 for cuda 9, ...)
     sudo reboot
 
-once reboot
+once rebooted
 
     nvidia-smi
     
-see driver installed properly or not, if it does, then 
+see if driver was installed properly or not, if it does, then 
 
 Then download cuda.run file and install cuda without install driver,
 
@@ -197,15 +197,12 @@ Make it permanent with this command:
 
     echo "options iwlwifi 11n_disable=1" | sudo tee /etc/modprobe.d/iwlwifi.conf
 
-### Declartion
+### Disclaimer
 
-It is just proplem I have with my zenbook, if it distroys your laptop, well, cest la vie
+It is just problem I have with my zenbook, if it destroys your laptop, well, cest la vie
 
-If you have other problems , I may be able to help (if the system is not fresh installed, 
+If you have other problems, I may be able to help (if the system is not fresh installed, 
 
 then the possibitties will be way to high)
 
-my mail: a36402191234@gmail.com
-
-
-
+my email: a36402191234@gmail.com
