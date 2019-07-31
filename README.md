@@ -197,6 +197,9 @@ Make it permanent with this command:
 
     echo "options iwlwifi 11n_disable=1" | sudo tee /etc/modprobe.d/iwlwifi.conf
 
+## 6. Fn+Esc not working
+Fn+Esc is not working out of the box, meaning that Fn keys cannot be locked. This can be easily fixed by updating to kernel version 5.2.3 or higher. See issue #1 for instructions on how to update the kernel.
+
 ### Disclaimer
 
 It is just problem I have with my zenbook, if it destroys your laptop, well, cest la vie
