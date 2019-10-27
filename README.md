@@ -202,7 +202,7 @@ Fn+Esc is not working out of the box, meaning that Fn keys cannot be locked. Thi
 
 ### Disclaimer
 
-It is just problem I have with my zenbook, if it destroys your laptop, well, cest la vie
+It is just problem I have with my zenbook, if it destroys your system, well, das Leben ist kein Ponyhof.
 
 If you have other problems, I may be able to help (if the system is not fresh installed, 
 
