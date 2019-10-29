@@ -184,7 +184,7 @@ to .bashrc
 
 then in the futurn, just type 'screenoff' in the terminal 
 
-update : just use fn + f4 multiple times
+update : just dim the screnn ( fn + f4 ) till complete black.
 
 ## 5. Slow wifi
 resaon : 18.04 will use 802.11n but the router may use a/b/g
