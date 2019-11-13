@@ -11,13 +11,15 @@ It is the problem about the graphic card.
 
 Choose install Ubuntu option (BUT DONT PRESS ENTER)
 
+![install](P_20191113_074057.jpg)
+
 Press e
 
 Find the line that starts with linux then add 
 
     modprobe.blacklist=nouveau
 
-after quiet splash.
+after quiet splash before triple dashes. 
 
 Once the installation is done, remove the usb and reboot system
 
@@ -182,7 +184,7 @@ permanent: add
     
 to .bashrc
 
-then in the futurn, just type 'screenoff' in the terminal 
+then in the future, just type 'screenoff' in the terminal 
 
 update : just dim the screnn ( fn + f4 ) till complete black.
 
