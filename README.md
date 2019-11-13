@@ -11,7 +11,7 @@ It is the problem about the graphic card.
 
 Choose install Ubuntu option (BUT DONT PRESS ENTER)
 
-![install](P_20191113_074057.jpg)
+![install](install_grub.jpg)
 
 Press e
 
