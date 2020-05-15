@@ -204,6 +204,12 @@ Make it permanent with this command:
 ## 6. Fn+Esc not working
 Fn+Esc is not working out of the box, meaning that Fn keys cannot be locked. This can be easily fixed by updating to kernel version 5.2.3 or higher. See issue #1 for instructions on how to update the kernel.
 
+## 7. no sound after switch between ubuntu and windows:
+    
+    killall pulseaudio; rm -r ~/.config/pulse/*
+and "shutdown" the computer and boot again, not "reboot".
+It seems a general peoblem but I haven't figured out why. 
+
 ### Disclaimer
 
 It is just problem I have with my zenbook, if it destroys your system, well, das Leben ist kein Ponyhof.
